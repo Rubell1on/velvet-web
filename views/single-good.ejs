@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/CSS/single-good.css">
+
+    <title><%= arr.name %></title>
+</head>
+<body>
+
+    <% include blocks/phone-block%>
+    <% include blocks/header%>
+    <% include blocks/navigation%>
+    
+    <div class="header"></div>
+    <div class="wrapper">
+        <!-- <div class="good"> -->
+            
+            <div class="content">
+                <div class="name-block mobile">
+                    <h1 class="name" id="name1"><%= arr.name %></h1>
+                </div>
+                <div class="image">
+                    <img class="bigImage" src="<%= sourceArr[id].image%>" alt="">
+                    <% if (sourceArr[id].carousel){%> 
+                    <div class="photos">
+                        <% for (pics in sourceArr[id].carousel){%>
+                        <img class="smallImage" id="<%= pics%>" src=" <%= sourceArr[id].carousel[pics].images.standard_resolution.url%>" alt="">
+                           
+                        <% }%>
+                    </div> 
+                    <% }%>
+                </div>
+                <div class="text-content">
+                    <div class="name-block full">
+                        <h1 class="name"><%= arr.name %></h1>
+                    </div>
+                    
+                    <div class="caption">Описание: <%= arr.description %></div>
+
+                    <div class="cost">Цена: <%= arr.price %> &#8381; за КГ</div>
+                    <div class="controls">
+                        <input type="button" class="decr" value="-">
+                        <input type="text" class="curValue" value="1">
+                        <input type="button" class="inr" value="+">
+                    </div>
+                    <input id="<%= id%>" type="button" class="toCart" value="Добавить в корзину">
+                    <!-- <br> -->
+                    
+                    <!-- <br> -->
+                </div>
+                
+            </div>
+            
+        <!-- </div> -->
+    </div>
+    <a href="/index"><div class="mainlink">Вернуться на главную</div></a>
+    <% include blocks/footer%>  
+    <script src="/JS/jquary.js"></script>
+    <script src="/JS/addToCart.js"></script>
+    <script src="/JS/morePhotos.js"></script>
+    <script src="/JS/loadAnimation.js"></script>
+</body>
+</html>

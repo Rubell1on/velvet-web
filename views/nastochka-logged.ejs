@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/CSS/main-block.css">
+    <link rel="stylesheet" href="/public/CSS/adminka.css">
+    <title>Document</title>
+</head>
+<body>
+    <% include blocks/phone-block%>
+    <div class="main-block" style="background: rgb(132, 132, 255)">
+            <div class="backg"></div>
+            <div class="logo">
+                <h2>Velvet</h2>
+                <h1>Админка;3</h1>
+            </div>
+        </div>
+    <% include blocks/navigation%>
+    <div class="controlTab">
+        <input type="button" class="expandAll" value="Свернуть все">
+        <input type="button" class="ready" value="Выполненные">
+    </div>
+    
+    <table class="table" id="undone">
+        <% for(key in data) { %>
+            <% if (data[key].ready == false){%>
+            <tbody class="full-row" id="<%= key %>">
+                <tr class="userInfo" id="<%= key %>">
+                    <td><%= data[key].userName%></td>
+                    <td><%= data[key].userTel%></td>
+                    <td><%= data[key].userNote%></td>
+                    <td><%= data[key].total%> &#8381;</td>
+                    <td>
+                        <select name="" id="isReady">
+                                <%= data[key].ready %>
+                            <option value="false">Не готов</option>
+                            <option value="true">Готов</option>
+                        </select>
+                    </td>
+                </tr>
+                <% for(elem in data[key]) { %>
+                <tr class="goodsInfo" id="<%= key%>"> 
+                    <% if(elem == "total") break %>
+                    <td class="firstCell"><a href="<%= data[key][elem].pageLink%>"><%= data[key][elem].name%></a></td>
+                    <td><%= data[key][elem].count%> КГ</td>
+                    <td><%= data[key][elem].cost%> &#8381; за КГ</td> 
+                    <td><%= data[key][elem].cost * data[key][elem].count%></td> 
+                </tr>
+                <% } %>   
+            </tbody>
+            <%}%>
+        <% } %>
+    </table>
+
+    <table class="table" id="done">
+            <% for(key in data) { %>
+                <% if (data[key].ready == true){%>
+                <tbody class="full-row">
+                    <tr class="userInfo" id="<%= key %>">
+                        <td><%= data[key].userName%></td>
+                        <td><%= data[key].userTel%></td>
+                        <td><%= data[key].userNote%></td>
+                        <td><%= data[key].total%> &#8381;</td>
+                        <td>
+                            <select name="" id="isReady">
+                                    <%= data[key].ready %>
+                                <option value="false">Не готов</option>
+                                <option value="true">Готов</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <% for(elem in data[key]) { %>
+                    <tr class="goodsInfo" id="<%= key%>"> 
+                        <% if(elem == "total") break %>
+                        <td class="firstCell"><a href="<%= data[key][elem].pageLink%>"><%= data[key][elem].name%></a></td>
+                        <td><%= data[key][elem].count%> КГ</td>
+                        <td><%= data[key][elem].cost%> &#8381; за КГ</td> 
+                        <td><%= data[key][elem].cost * data[key][elem].count%></td> 
+                    </tr>
+                    <% } %>   
+                </tbody>
+                <%}%>
+            <% } %>
+        </table>
+
+    <% include blocks/footer%>
+    <script src="/JS/jquary.js"></script>
+    <script src="/JS/nastochka.js"></script>
+    <script src="/JS/searchTab.js"></script>
+</body>
+</html>

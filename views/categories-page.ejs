@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/CSS/categories.css">
+
+    <link rel="stylesheet" href="../public/CSS/main-block.css">
+
+    <title>Категории</title>
+</head>
+<body>
+    
+    <% include blocks/phone-block%>
+     <div class="main-block">
+        <div class="backg"></div>
+        <div class="logo">
+                <a href="/index"><h2>Velvet</h2></a>
+            <h1>Категории</h1>
+        </div>
+    </div>
+    <% include blocks/navigation%>
+    <!-- <div class="categories">
+        <h1>Категории тортиков</h1>
+    </div> -->
+    <div class="flex-container">
+
+        <a class="element" href="/categories/Svadebny'j">
+                <img class="image" src="../public/btn1.png"  alt="">
+                <div class="under">
+                        <h2>Свадебные</h2>
+                </div>
+        </a>
+        <a class="element" href="/categories/Korporativny'j">
+                <img class="image" src="../public/btn1.png"  alt="">
+                <div class="under">
+                        <h2>Корпоративные</h2>
+                </div>
+        </a>
+        <a class="element" href="/categories/Prazdnichny'j">
+                <img class="image" src="../public/btn1.png"  alt="">
+                <div class="under">
+                        <h2>Праздничные</h2>
+                </div>
+        </a>
+        <a class="element"  href="/categories/Detskij">
+                <img class="image" src="../public/btn1.png"  alt="">
+                <div class="under">
+                        <h2>Детские</h2>
+                </div>
+        </a>
+        <a class="element"  href="/categories/Muzhskoj">
+                <img class="image" src="../public/btn1.png"  alt="">
+                <div class="under">
+                        <h2>Мужские</h2>
+                </div>
+        </a>
+        <a class="element"  href="/categories/ZHenskij">
+                <img class="image" src="../public/btn1.png"  alt="">
+                <div class="under">
+                        <h2>Женские</h2>
+                </div>
+        </a>
+
+  
+    </div>
+    <!-- <a href="/goods/0001"><div class="element">Пункт 1</div></a>
+    <a href="/goods/0002"><div class="element">Пункт 2</div></a>
+    <a href="/goods/0003"><div class="element">Пункт 3</div></a>
+    <a href="/goods/0004"><div class="element">Пункт 4</div></a> -->
+     <% include blocks/footer%>   
+     <script src="/JS/jquary.js"></script>
+    <script src="/JS/addToCart.js"></script>
+    <!-- <script src="/JS/showCart.js"></script> -->
+</body>
+</html>

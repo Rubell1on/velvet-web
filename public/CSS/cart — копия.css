@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cart {
+    position: relative;
+    width: 80%;
+
+    margin:0 auto;
+    /* margin-bottom: 20px; */
+
+}
+
+.cartHeader {
+    
+    width: 80%;
+    height: 40px;
+    background: rgb(226, 226, 226);
+    margin: 0 auto;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    word-wrap: break-word;
+}
+
+.cartElem {
+    
+    width: 100%;
+    height: 100px;
+    background: rgb(245, 245, 245);
+    line-height: 100px;
+    text-align: center;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+
+.imageCol {
+    height: 100%;
+    width: 100px;
+    float: left;
+    /* border-left: 1px solid grey; */
+}
+
+.imageCol img {
+    width: 100%;
+}
+
+.nameCol {
+    width: 25%;
+    height: 100%;
+    float: left;
+    border-left: 1px solid  rgb(216, 216, 216);
+}
+
+.costCol {
+    width: 20%;
+    height: 100%;
+    float: left;
+    border-left: 1px solid  rgb(216, 216, 216);
+}
+
+.countCol {
+    width: 15%;
+    height: 100%;
+    float: left;
+    border-left: 1px solid  rgb(216, 216, 216);
+}
+
+.middleCount {
+    width: 20%;
+    height: 100%;
+    float: left;
+    border-left: 1px solid  rgb(216, 216, 216);
+}
+
+.total {
+    width: 80%;
+    height: 40px;
+    background: rgb(245, 245, 245);
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.total p {
+    float: left;
+    line-height: 40px;
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+.final-step {
+    float:left;
+    width: 120px;
+    height: 80%;
+    margin-right: 5px;
+    background: red;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 4px;
+}
+
+/* .delButton {
+    width: 10%;
+    float: left;
+} */
+.delButton {
+    float:left;
+    width: 5%;
+}

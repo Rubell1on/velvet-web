@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/CSS/main-block.css">
+    <link rel="stylesheet" href="/public/CSS/cart.css">
+    <link rel="stylesheet" href="/public/CSS/overlay.css">
+    <title>Корзина</title>
+</head>
+<body>
+    <% include blocks/phone-block%>
+    <div class="main-block">
+        <div class="backg"></div>
+        <div class="logo">
+            <a href="/index"><h2>Velvet</h2></a>
+            <h1>Корзина</h1>
+        </div>
+    </div>
+    <% include blocks/navigation%>
+    <!-- <div class="cartHeader">
+        <div class="delButton">_</div>
+        <div class="imageCol">Изображение</div>
+        <div class="nameCol">Название</div>
+        <div class="costCol">Цена за КГ</div>
+        <div class="countCol">Кол-во КГ</div>
+        <div class="middleCount">Промежуточная цена</div>
+    </div> -->
+    <!-- <div class="cart">
+        
+    </div> -->
+    <table class="table">
+       
+    </table>
+    <!-- <form action="/cart-success" method="post">
+        <div name="info" class="middleCount">Промежуточная цена</div> -->
+        <!-- <label>Имя</label><br> -->
+        <!-- <input type="text" name="userName" /><br><br> -->
+        <!-- <label>Телефон</label><br> -->
+        <!-- <input type="number" name="userTel"/><br><br> -->
+        
+    <!-- </form> -->
+    <form action="/cart-success" method="post"></form>
+        <div class="confirm">
+            <div class="closeBtn">X</div>
+            <h1>Последние штрихи</h1>
+            <div class="name">
+                <p>Ваше имя</p>
+                <input type="text" name="userName" required>
+            </div>
+            <div class="telphone">
+                <p>Телефон</p>
+                <input type="tel" name="userTel" required>
+            </div>
+            <div class="note">
+                <p>Заметка</p>
+                <input type="text" name="note">
+            </div>
+            <div class="sub">
+                <input type="submit" id="submit" value="Отправить"/>
+            </div>
+        </div>
+    </form>
+    <% include blocks/footer%> 
+    <script src="/JS/jquary.js"></script>
+    <script src="/JS/addToCart.js"></script>
+    <script src="/JS/showCart.js"></script>
+</body>
+</html>

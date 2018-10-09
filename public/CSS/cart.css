@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cart {
+    /* position: relative; */
+    width: 80%;
+    background: rgb(245, 245, 245);
+    margin:0 auto;
+    /* margin-bottom: 20px; */
+
+}
+
+.cartHeader {
+    
+    width: 80%;
+    height: 40px;
+    background: rgb(226, 226, 226);
+    margin: 0 auto;
+    /* line-height: 40px; */
+    text-align: center;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    word-wrap: break-word;
+}
+
+.cartElem {
+    
+    width: 80%;
+    height: 750px;
+    background: rgb(245, 245, 245);
+    /* line-height: 100px; */
+    text-align: center;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.cart td {
+    /* padding-left: 10px; */
+    /* box-sizing: border-box; */
+    text-align: center;
+}
+
+.imageCol {
+    height: 100%;
+    width: 50px;
+    /* float: left; */
+    /* border-left: 1px solid grey; */
+}
+
+.imageCol img {
+    width: 60%;
+}
+
+.nameCol {
+    /* width: 25%; */
+    height: 100%;
+    
+    /* float: left; */
+    /* border-left: 1px solid  rgb(216, 216, 216); */
+}
+
+.nameCol p{
+    word-wrap: break-word;
+}
+
+
+.costCol {
+    /* width: 20%; */
+    height: 100%;
+    /* float: left; */
+    /* border-left: 1px solid  rgb(216, 216, 216); */
+}
+
+.countCol {
+    /* width: 15%; */
+    height: 100%;
+    /* float: left; */
+    /* border-left: 1px solid  rgb(216, 216, 216); */
+}
+
+.middleCount {
+    /* width: 20%; */
+    height: 100%;
+    /* float: left; */
+    /* border-left: 1px solid  rgb(216, 216, 216); */
+}
+
+.totalPrice {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.total {
+    width: 80%;
+    height: 40px;
+    background: rgb(245, 245, 245);
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* .total p {
+    float: left;
+    line-height: 40px;
+    margin-left: 5px;
+    font-size: 30px;
+} */
+
+.totalP {
+    width: 60px;
+}
+.totalCount {
+    width: 80%;
+}
+
+.final-step {
+    float:left;
+    width: 80px;
+    height: 80%;
+    margin-right: 5px;
+    background: red;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.delButton {
+    width: 100%;
+    height: 30px;
+    /* float: left; */
+}
+
+.table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.delRow {
+    width: 30px;
+}
+
+@media (max-width: 460px){
+    .table {
+        width: 100%;
+        word-break: break-word;
+    }
+
+}
+
+
+

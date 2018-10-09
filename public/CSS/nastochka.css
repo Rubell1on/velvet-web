@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.confirm {
+    position: absolute;
+    width: 500px;
+    height: 260px;
+    background: rgb(233, 233, 233);
+    left: calc(50% - 250px);
+    top: calc(50% - 200px);
+    padding: 20px;
+    box-sizing: border-box;
+    background:#8484ff;
+}
+
+.confirm h1{
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.name, .telphone{
+    
+    width: 100%;
+    margin-top: 10px;
+    
+}
+
+.name input, .telphone input {
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: 1px solid white;
+}
+
+
+
+.name p, .telphone p{
+    margin-bottom: 5px;
+}
+
+.sub {
+    margin-top: 10px;
+}
+
+.sub input {
+    width: 100px;
+    height: 30px;
+    
+}

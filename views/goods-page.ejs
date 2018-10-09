@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/CSS/goods.css">
+
+    <link rel="stylesheet" href="../public/CSS/main-block.css">
+
+    <title><%= trn%></title>
+</head>
+<body>
+    
+    <% include blocks/phone-block%>
+     <div class="main-block">
+        <div class="backg"></div>
+        <div class="logo">
+            <a href="/index"><h2>Velvet</h2></a>
+            <h1><%= trn%></h1>
+        </div>
+    </div>
+    <% include blocks/navigation%>
+    <!-- <div class="categories">
+        <h1>Категории тортиков</h1>
+    </div> -->
+    <div class="flex-container">
+    <% for(key in arr){%>
+        <a class="element" id="<%= key%>" href="/categories/<%= data%>/<%= key%>">
+            <img class="image" src="<%= arr[key].image%>" class=".element" alt="">
+            <div class="over">
+               
+                <div class="social">
+                    <div class="like">
+                        <img src="../public/Images/like-icon.png" alt="">
+                        <h2><%= arr[key].likes%></h2>
+                    </div>
+                    <div class="comment">
+                            <img src="../public/Images/comment.png" alt="">
+                        <h2><%= arr[key].comments%></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="under">
+                <div class="name">
+                    <img src="../public/Images/lemon-cake.png" alt="">
+                    <p><%= arr[key].name%></p>
+                </div>
+                <div class="price">
+                        <img src="../public/Images/cash.png" alt="">
+                    <p class="cost"><%= arr[key].cost%> &#8381; за КГ</p>
+                </div>
+            </div>
+        </a>
+
+    <% }%>
+    </div>
+
+     <% include blocks/footer%>  
+     <script src="/JS/jquary.js"></script>
+    <script src="/JS/addToCart.js"></script>
+    <script src="/JS/loadAnimation.js"></script> 
+</body>
+</html>

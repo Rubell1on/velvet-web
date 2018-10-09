@@ -1,0 +1,101 @@
+/* * {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */
+
+.flex-container {
+    /* display: -webkit-flex; */
+    width: 95%;
+    display: flex;
+    /* flex: auto; */
+	/* -webkit-flex-direction: row; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* height: 200px; */
+    justify-content: center;
+    /* align-content: flex-start; */
+    /* align-items: flex-end; */
+    list-style-type: none;
+    margin: 0 auto;
+    /* padding-left: 10px; */
+}
+
+.element {
+     /* background: url(../btn1.png) space center ; */
+    /* -webkit-flex: auto; */
+    /* flex: auto; */
+    /* size: 200px 200px; */
+    /* object-fit: contain; */
+    width: 100%;
+    /* height: 200px; */
+    flex-grow: 0.1;
+    /* flex-shrink: 0.1; */
+    flex-basis: 200px ;
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    /* object-fit: contain; */
+    /* border: 1px solid white; */
+    
+}
+
+.element .image {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    
+    /* max-width: 100%;
+    display: flex;
+    min-height: 207px; */
+}
+
+
+.flex-container .element .under {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* border-bottom: 1px solid rgb(206, 206, 206);
+    border-left: 1px solid rgb(206, 206, 206);
+    border-right: 1px solid rgb(206, 206, 206); */
+    background: rgba(87, 87, 87, 0.405);
+    box-sizing: border-box;
+    line-height: 100%;
+    /* margin-top: -200px; */
+    color: white;
+    top: 0;
+    font-size: 15px;
+    padding-top: calc(50% - 27px);
+}
+
+@media (max-width: 460px) {
+    .main-block .logo h1 {
+        font-size: 70px;
+    }
+
+    .flex-container {
+        justify-content: left;
+        /* flex-basis: 185px ; */
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 370px;
+        height: 100%;
+        /* margin: 0 auto; */
+    }
+
+    .flex-container .element {
+        width: 180px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        /* flex-grow: 0.5; */
+        flex-basis: 180px;
+    }
+    .flex-container .element .image {
+        /* width: 185px; */
+        /* width: inherit; */
+        /* height: 180px; */
+    }
+
+    
+}
