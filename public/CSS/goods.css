@@ -11,6 +11,7 @@
 }
 
 .flex-container {
+    padding-top: 10px;
     /* display: -webkit-flex; */
     width: 95%;
     display: flex;

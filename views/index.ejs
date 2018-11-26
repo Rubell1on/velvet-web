@@ -21,44 +21,52 @@
                 <h2>Мы делаем вкусно</h2>
             </div>
         </div>
-        <% include blocks/navigation %>  
-        <!-- <div class="second-block">
-            <h2>Обо мне</h2>
-            <div class="content-wrapper">
-                <img id="nastko" src="../public/Images/nastko.jpg" alt="Фото">
-                <div class="content">
-                    
-                    <p>Привет, меня зовут Настя и я ооочень люблю печь как тортики, так и другую вкусную кондитерку. Данный процесс до безумия интересный, в особенности когда меня просят сделать что-нибудь креативное. <br>За то время, что я занимаюсь тортиками у меня накопился очень неплохой богаж опыта, идей для будущих проектов, а так же фотографий работ, которые вы можете посмотреть ниже.</p>
-                </div>
-            </div>
-            
-
-        </div> -->
-        
+        <% include blocks/navigation %>          
         <div class="third-block">
             <h2>Тортики в инстаграме</h2>
-
             <div class="insta-frame">
-                    <iframe class="instaFrm" src="addnewjsonobj/index.html">
-                    </iframe>
+                <div class="left-col">
+                    <div class="left-btn"><p><</p></div>
                 </div>
+                <div class="right-col">
+                    <div class="right-btn"><p>></p></div>
+                </div>
+                <div class="line" >
+                        <!-- style="width: <%= count%>px" -->
+                    <% for(key in object){%>
+                        <div class="instaPhoto" id="<%= key%>" style="background: url(<%= object[key].image%>); background-size: cover;">
+                            <a href="<%= object[key].link%>" class="link" target="_blank">
+                                    <div class="overlay">
+                                        <div class="caption"><%= object[key].caption%></div>
+                                        <div class="background"></div>
+                                    </div>
+                                </a> 
+                        </div>  
+                    <% }%>  
+                </div>
+            </div>
+
         </div>
         <div class="fourth-block">
             <h2>Интерактивный генератор</h2>
-            <div>
-                <div class="content-wrapper">
-                    <div class="content">
-                        <iframe class="shape" src="test-shapes/index.html" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
-                        <p>Если вдруг вы не увидели тортик  который бы очень хотели, попробуйте наш интерактивный генератор. Надеюсь с его помощью вы уж точно создадите вкусность о которой мечтали.</p>
+            <iframe class="shape" src="../cakeEditor/index.html" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="close">x</div>
+                    <p>Если вдруг вы не увидели тортик  который бы очень хотели, попробуйте наш интерактивный генератор. Надеюсь с его помощью вы уж точно создадите вкусность о которой мечтали.</p>
 
-                    </div>
                 </div>
             </div>
+            <div>
+                
+            </div>
         </div>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A245d1135782ce3e6ee0a21d23d72e7afc5bcdc5154ef55c44668911cfbbac391&amp;source=constructor" width="100%" height="600" frameborder="0"></iframe>
+        <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A245d1135782ce3e6ee0a21d23d72e7afc5bcdc5154ef55c44668911cfbbac391&amp;source=constructor" frameborder="0"></iframe>
     </div> 
     <% include blocks/footer%> 
+    <script src="JS/jquary.js"></script>
     <script src="../JS/addToCart.js"></script>
+    <script src="../JS/widget.js"></script>
     <!-- <script>$('body').load('https://yandex.ru/map-widget/v1/?um=constructor%3A245d1135782ce3e6ee0a21d23d72e7afc5bcdc5154ef55c44668911cfbbac391&amp;source=constructor',function(){
         $('body').animate({opacity:1},500);
     });</script> -->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/CSS/main-block.css">
+    <link rel="stylesheet" href="public/CSS/editor.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- <img id="background1" src="images/background1.jpg" alt=""> -->
+        <% include blocks/phone-block %>
+        <div class="main-block">
+            <div class="backg"></div>
+            <div class="logo">
+                <h1>Генератор тортов</h1>
+                <!-- <h2>Мы делаем вкусно</h2> -->
+            </div>
+        </div>
+        <% include blocks/navigation %>
+        <div class="editor">
+            <iframe class="shape" src="../cakeEditor/index.html" scrolling="no" allowtransparency="true" frameborder="0"></iframe> 
+        </div>         
+    </div>    
+    <% include blocks/footer%> 
+    <script src="JS/jquary.js"></script>
+    <script src="../JS/addToCart.js"></script>
+    <script src="../JS/widget.js"></script>
+</body>
+</html>

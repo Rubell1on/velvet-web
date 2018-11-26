@@ -79,6 +79,10 @@ function getCost() {
     return str.substring(startOfStr+2, endOfStr-2);
 }
 
+$('.close').click(function(){
+    $('.content-wrapper').css("display","none");
+});
+
 
 
 

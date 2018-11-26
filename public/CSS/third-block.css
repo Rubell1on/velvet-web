@@ -1,16 +1,176 @@
+
 .third-block {
     padding-top: 50px;
     width: 100%;
-    height: 760px;
+    /* height: 100vh; */
     background: rgb(231, 231, 231);
     /* padding-bottom: 20px; */
+    overflow: hidden;
+}
+body .navigation {
+    margin-bottom: 0px;
 }
 
-
-.instaFrm {
+/* .instaFrm {
 
     left: 0;
     width: 100%;
     height: 650px;
     border: 0;
+} */
+
+.insta-frame {
+    width: 200%;
+    height: 300px;
+    background: white;
+}
+
+.line {
+    display: inline-block;
+    position: relative;
+    width: max-content;
+    height: inherit;
+}
+
+.instaPhoto {
+    position: relative;
+    display: block;
+    float: left;
+    width: 300px;
+    height: inherit;
+    background: grey;
+    overflow-y: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.link {
+    width: inherit;
+    height: inherit;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    margin-top: 300px;
+    transition: margin-top 500ms ease;
+}
+.background {
+    position: relative;
+    background: red;
+    opacity: 0.3;
+    width: inherit;
+    height: inherit;
+}
+
+.caption {
+    box-sizing: border-box;
+    padding: 5px;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 290px;
+    font-size: 25px;
+}
+
+.instaPhoto:hover .overlay{
+    /* opacity: 0.5; */
+    margin-top: 0px;
+}
+
+
+.left-col {
+    position: absolute;
+    /* width: 50px; */
+    height: inherit;
+}
+.left-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: calc(50% - 25px);
+    left: 20px;
+    border: 3px white solid;
+    border-radius: 10px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    font-family: arial;
+    font-size: 25px;
+    transition-property: background color border;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+}
+
+.left-btn:hover {
+    background: white;
+    color: red;
+    border: 3px white solid;
+}
+
+.right-col {
+    position: absolute;
+    right: 0px;
+    /* width: 50px; */
+    height: inherit;
+}
+
+.right-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: calc(50% - 25px);
+    right: 20px;
+    border: 3px white solid;
+    border-radius: 10px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    font-family: arial;
+    font-size: 25px;
+    transition-property: background color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+}
+
+.right-btn:hover {
+    background: white;
+    color: red;
+    border: 3px white solid;
+}
+
+@media (max-width: 460px) {
+    .overlay {
+        margin-top: 0px;
+    }
+
+    .third-block h2 {
+        width: 100%;
+    }
+
+    .fourth-block h2 {
+        width: 100%;
+    }
+
+    .insta-frame {
+        overflow-x: scroll;
+        overflow-y: hidden; 
+    }
+
+    .left-btn, .right-btn {
+        border:none;
+        transition: none;
+    }
+    .left-btn:hover, .right-btn:hover {
+        background: none;
+        color: white;
+        border: none;
+    }
 }

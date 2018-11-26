@@ -4,14 +4,16 @@ var
     bodyParser = require('body-parser');
     translate = require('./JS/translate');
     split = require('./JS/subStr');
-    totalCount = require('./JS/totalCount');
+    totalCount = require('./JS/totalCount'),
+    // InstaPars = require('./server');
     
 app = express();
 
-app.listen(3000,"127.1.1.1");
+app.listen(3000,"192.168.0.102");
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 app.use('/JS', express.static('JS'));
+app.use('/cakeEditor', express.static('cakeEditor'));
 
 app.use(bodyParser.urlencoded({extended: false}));
 console.log("Слушаю порт 3000");
@@ -22,8 +24,22 @@ var arrOfGoods = JSON.parse(fs.readFileSync("insta.json"));
 
 
 // console.log(goods);
-app.get("/index", function(req, res){
-    res.render("index.ejs");
+app.get("/", function(req, res){
+    var obj = {},
+    remain = getNumOfProp(arrOfGoods)-1;
+
+    for(var i = remain; i>=0; i--) {
+        obj[i] = {};
+    }
+    for(var elm in arrOfGoods) {
+        obj[remain].image = arrOfGoods[elm].image;
+        obj[remain].caption = arrOfGoods[elm].caption.substring(10,arrOfGoods[elm].caption.indexOf("."));
+        obj[remain].link = arrOfGoods[elm].link;
+        remain--;
+    }
+    console.log(obj['0'].caption);
+    // console.log(obj);
+    res.render("index.ejs",{object:obj, count: (getNumOfProp(arrOfGoods))*305});
 });
 
 app.get("/categories",function(req, res){
@@ -93,8 +109,8 @@ app.get("/categories/:goods/:idOfGood",function(req, res){
     
 });
 
-app.get("/generator", function(req, res){
-    res.render("generator.ejs");
+app.get("/cake-editor", function(req, res){
+    res.render("cakeEditor.ejs");
 });
 
 
@@ -169,6 +185,14 @@ app.route("/nastochka-searching")
     // console.log(deal);
     res.send(searchResult);
     });
+
+function getNumOfProp(obj) {
+    var counter = 0;
+    for(var elm in obj) {
+        counter++;
+    }
+    return counter;
+}
 
 // app.post("/nastochka-search", function (req, res){
 

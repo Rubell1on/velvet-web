@@ -1,3 +1,4 @@
+// module.exports.InstaParser = function(){
 var 
     fs = require('fs'),
     http = require('http'),
@@ -8,7 +9,18 @@ var
     count = 1,
     instURL = 'https://api.instagram.com/v1/users/self/media/recent?access_token=';
     //token = '2189806640.91ac702.6fb3e465385b4063a08c2d54d7697302';
-    token = '7911095082.4d195ae.3ef5631abfb140ca82039e2d1d4e639a'
+    token = '7911095082.4d195ae.3ef5631abfb140ca82039e2d1d4e639a';
+
+    setInterval(function getFile() {
+        console.log('Таймер запущен!');
+        request(instURL+token, true, function(error, response, body){
+    
+            fs.writeFileSync('./list1.json', body);
+            addToList();
+    
+        });
+    }, 1000);
+// };
 
 function addToList(){
     var insta = JSON.parse(fs.readFileSync('insta.json'));
@@ -60,15 +72,7 @@ function addToList(){
         // //loadList();
 };
 
-setInterval(function getFile() {
-    console.log('Таймер запущен!');
-    request(instURL+token, true, function(error, response, body){
 
-        fs.writeFileSync('./list1.json', body);
-        addToList();
-
-    });
-}, 1000);
 
 
 //addToList();
