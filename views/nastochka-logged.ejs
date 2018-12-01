@@ -57,7 +57,7 @@
     <table class="table" id="done">
             <% for(key in data) { %>
                 <% if (data[key].ready == true){%>
-                <tbody class="full-row">
+                <tbody class="full-row" id="<%= key %>">
                     <tr class="userInfo" id="<%= key %>">
                         <td><%= data[key].userName%></td>
                         <td><%= data[key].userTel%></td>
@@ -67,7 +67,7 @@
                             <select name="" id="isReady">
                                     <%= data[key].ready %>
                                 <option value="false">Не готов</option>
-                                <option value="true">Готов</option>
+                                <option value="true" selected>Готов</option>
                             </select>
                         </td>
                     </tr>

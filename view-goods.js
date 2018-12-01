@@ -9,7 +9,7 @@ var
     
 app = express();
 
-app.listen(3000,"192.168.0.102");
+app.listen(3000,"192.168.0.101");
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 app.use('/JS', express.static('JS'));
@@ -40,6 +40,47 @@ app.get("/", function(req, res){
     console.log(obj['0'].caption);
     // console.log(obj);
     res.render("index.ejs",{object:obj, count: (getNumOfProp(arrOfGoods))*305});
+});
+
+app.post("/search", function(req, res){
+    // console.log(req.body.searchReq);
+    // console.log(req.body.request);
+
+    // var temp = req.body.searchReq;
+    var temp = req.body.request;
+    
+
+    temp = temp.replace(/ /g, "|");
+    console.log("Значениевввв темпа"+temp+"  "+req.body.request);
+
+    var reg = new RegExp(temp, "ig");
+
+
+    function select(){
+        var selected = {};
+
+        for (key in arrOfGoods){
+            // for(elem in arrOfGoods[key]){
+                if(reg.test(arrOfGoods[key].caption)){
+                    selected[key] = {};
+                    var splitted = split.splitStr(arrOfGoods[key].caption);
+                    selected[key].name = splitted.name;
+                    selected[key].cost = splitted.price;
+                    selected[key].comments = arrOfGoods[key].comments;
+                    selected[key].likes = arrOfGoods[key].likes;
+                    selected[key].link = arrOfGoods[key].link;
+                    selected[key].image = arrOfGoods[key].image;
+                    // console.log(selected[key]);
+                    // selected[key].name = splitted.name;
+                }
+            // }
+        }
+        return selected;
+    }
+
+    sel = select();
+    // console.log("Массив: "+sel);
+    res.render("search.ejs",{arr: sel});
 });
 
 app.get("/categories",function(req, res){
@@ -152,11 +193,27 @@ app.post("/cart-success", function (req, res){
     res.render("categories-page.ejs");
 });
 
-app.get('/nastochka', function(req, res){
-    // res.render('nastochka.ejs');
-    var deal = JSON.parse(fs.readFileSync('./deal.json'));
-    res.render('nastochka-logged.ejs',{data:deal});
-});
+app.route('/nastochka')
+
+    // .get(function(req, res){
+    //     // res.render('nastochka.ejs');
+    //     console.log(typeof req.body.id, req.body.id);
+    //     // var db = JSON.parse(fs.readFileSync('./db.json'));
+    //     // if(db[req.body.id].role === admin) {
+    //         var deal = JSON.parse(fs.readFileSync('./deal.json'));
+    //         res.render('nastochka-logged.ejs',{data:deal});
+    //     // }
+    // })
+
+    .post(function(req, res){
+        // res.render('nastochka.ejs');
+        console.log(typeof req.body.id, req.body.id);
+        // var db = JSON.parse(fs.readFileSync('./db.json'));
+        // if(db[req.body.id].role === admin) {
+            var deal = JSON.parse(fs.readFileSync('./deal.json'));
+            res.render('nastochka-logged.ejs',{data:deal});
+        // }
+    });
 
 var searchResult = {};
 //Возможно истина и где-то тут:D
@@ -185,6 +242,54 @@ app.route("/nastochka-searching")
     // console.log(deal);
     res.send(searchResult);
     });
+
+app.route("/login")
+    .get(function(req, res){
+        res.render("login.ejs");
+    })
+
+    .post(function(req, res){            
+        var 
+            db = JSON.parse(fs.readFileSync("./db.json")),
+            deal = JSON.parse(fs.readFileSync('./deal.json'));
+        for(var id in db) {
+            if(((db[id].login === req.body.login && db[id].password === req.body.password)|| (db[id].email === req.body.login && db[id].password === req.body.password))&&db[id].role === "admin"){
+                res.send({id:id, name: db[id].name});
+                // res.render("nastochka-logged.ejs",{data: deal});
+            }
+        }
+        res.render("404.ejs");
+    });
+
+app.route("/register")
+    .get(function(req, res){
+        res.render("register.ejs");
+    })
+
+    .post(function(req, res){
+        var 
+            db = JSON.parse(fs.readFileSync("./db.json")),
+            counter = getNumOfProp(db);
+        
+            db[counter+1] = {};
+            db[counter+1].login = req.body.login;
+            db[counter+1].name = req.body.name;
+            db[counter+1].lastName = req.body.lastName;
+            db[counter+1].phoneNumber = req.body.phoneNumber;
+            db[counter+1].email = req.body.email;
+            db[counter+1].password = req.body.password;
+
+            fs.writeFileSync("./db.json", JSON.stringify(db));
+    });
+
+app.post("/change", function(req, res){
+    var 
+        deal = JSON.parse(fs.readFileSync('./deal.json')),
+        bool = (req.body.value==="true");
+    // console.log(req.body.value);
+    deal[req.body.id].ready = bool;
+    fs.writeFileSync("./deal.json", JSON.stringify(deal));
+});
 
 function getNumOfProp(obj) {
     var counter = 0;

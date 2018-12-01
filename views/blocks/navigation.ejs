@@ -1,9 +1,23 @@
 <link rel="stylesheet" href="../../public/CSS/navigation.css">
 
-<div class="minified-menu"></div>
+
 <div class="navigation">
-    
+        <a class ="profLink" href="/profile">
+            <li class="profile">
+                <div class="photo">
+                    <div class="pic">Г</div>
+                </div>
+                <div class="text"> Профиль</div>
+            </li>
+        </a>
+    <div class="minified-menu"></div>
     <ul>
+        <a href="/profile"><li class="min-profile">
+            <div class="photo">
+                <div class="pic">Г</div>
+            </div>
+            <div class="text"> Профиль</div>
+        </li></a>
         <a href="/"><li>Главная</li></a>
         <a href="/categories"><li id="cat">Категории</li></a>
         <a href="/cake-editor"><li>Генератор</li></a>
@@ -11,7 +25,7 @@
     </ul>
     <div class="searchButton"></div>
     <form class="searchForm" action=""><!--/nastochka/search -->
-        <input type="text" class="admSearch" placeholder="Поиск">
+        <input type="text" class="admSearch" placeholder="Поиск" name="request">
     </form>
     <a class="cartLink" href="/cart">Корзина</a>
 </div>

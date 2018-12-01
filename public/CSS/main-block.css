@@ -56,3 +56,13 @@ body{
     color: white;    
 }
 
+@media(max-width: 460px) {
+    .main-block .logo h1 {
+        font-weight: 600;
+        font-size: 70px;
+        color: white;
+        line-height: 70px;
+        word-break: break-word;
+    }
+}
+

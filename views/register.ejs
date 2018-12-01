@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../public/CSS/register.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="login" action="/register" method="POST">
+            <div class="form-wrapper">
+                <label for="1">Логин</label>
+                <input id="1" type="text" name="login" required>
+                <label for="2">Имя</label>
+                <input id="2" type="text" name="name" required>
+                <label for="3">Фамилия</label>
+                <input id="3" type="text" name="lastName" required>
+                <label for="4">Телефон</label>
+                <input id="4" type="tel" name="phoneNumber" required>
+                <label for="5">e-mail</label>
+                <input id="5" type="email" name="email" required>
+                <label for="6">Пароль</label>
+                <input id="6" type="password" name="password" required>
+                <label for="7">Подтверждение пароля</label>
+                <input id="7" type="password" name="submitpass">
+                <input type="submit" value="Регистрация"  required>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

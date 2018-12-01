@@ -91,11 +91,12 @@
 }
 
 .toCart {
+    margin-top: 10px;
     position: absolute;
     border: 0;
     background: red;;
     color: white;
-    width: 175px;
+    width: 118px;
     height: 40px;
     border-radius: 3px;
     transition-property: background, color;
